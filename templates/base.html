@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+
+    body {
+        background-color: lightblue;
+    }
+    #topbar{
+        display:block;
+        width:100%;
+        height:150px;
+        background-color:#475;
+        }
+    #user{float:left;width:40%;}
+    .margin{margin: 3px}
+    #nav{float:left;width:60%;}
+    .left{float:left;}
+    </style>
+	<title>Terechsan - kraina bogatości i eleganckości</title>
+    <h3>Proszę o używanie wymyślonych haseł bo nie ma security</h3>
+</head>
+<body>
+
+	<div id="topbar">
+        <div id="user">
+            <div class="left">
+                <img class="margin" src="{{ avatarurl }}" width="144px" height="144x">
+            </div>
+            <div class="left">
+                <h2>{{ username }}</h2>
+                <form action='{{ button_action }}' method='GET'>
+                {% include form %}
+                <button type='submit'>{{ button_name }}</button>
+                </form>
+            </div>
+        </div>
+
+        <div id="nav">
+        </div>
+    </div>
+	<div>
+    <ul>
+{% for i in model %}
+    <li>{{ i.date }}, {{ i.ip }}</li>
+{% endfor %}
+</ul>
+    </div>
+</body>
+</html>
